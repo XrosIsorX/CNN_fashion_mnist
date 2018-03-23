@@ -94,7 +94,7 @@ fashion_model.summary()
 
 #Train network
 fashion_train = fashion_model.fit(train_X, train_label, batch_size=batch_size,epochs=epochs,verbose=1,validation_data=(valid_X, valid_label))
-fashion_model.save("fashion_model_nn.h5py")
+fashion_model.save("fashion_model.h5py")
 
 
 
