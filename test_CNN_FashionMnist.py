@@ -5,6 +5,8 @@ import numpy as np
 from keras.utils import to_categorical
 import matplotlib.pyplot as plt
 
+num_classes = 10
+
 def output_detail():
       classes = np.unique(train_Y)
       nClasses = len(classes)
@@ -83,3 +85,7 @@ for i, incorrect in enumerate(incorrect[:9]):
     plt.title("Predicted {}, Class {}".format(predicted_classes[incorrect], test_Y[incorrect]))
     plt.tight_layout()
 plt.show()
+
+from sklearn.metrics import classification_report
+target_names = ["Class {}".format(i) for i in range(num_classes)]
+print(classification_report(test_Y, predicted_classes, target_names=target_names))
